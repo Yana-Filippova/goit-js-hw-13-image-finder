@@ -41,6 +41,7 @@ function fetchImages() {
     appendImagesMarkup(images);
     loadMoreBtn.enable();
     scrollPage();
+    scrollUploadedImagesToTop();
 
     if (images.length <= 12 && images.length === 0) {
       loadMoreBtn.hide();
@@ -67,5 +68,13 @@ function scrollPage() {
   loadMoreBtn.refs.button.scrollIntoView({
     behavior: 'smooth',
     block: 'end',
+  });
+}
+
+function scrollUploadedImagesToTop() {
+  window.scrollBy({
+    top: 550,
+    left: 0,
+    behavior: 'smooth',
   });
 }
